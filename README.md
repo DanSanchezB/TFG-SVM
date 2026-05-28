@@ -16,7 +16,7 @@ Por otro lado, la fase práctica implementa estos conceptos teóricos para evalu
 
 - imagenes.R: Código empleado para generar las gráficas de hiperplanos, márgenes y fronteras de decisión que ilustran las explicaciones de la memoria.
 
-- TFG_DanielSánchezBotella.pdf: Documento completo con el desarrollo teórico, la metodología aplicada y las conclusiones finales del análisis.
+- TFG_DanielSánchez.pdf: Documento completo con el desarrollo teórico, la metodología aplicada y las conclusiones finales del análisis.
 
 ## Tecnologías y requisitos
 
