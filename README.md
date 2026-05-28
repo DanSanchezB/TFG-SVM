@@ -1,6 +1,6 @@
 # Máquinas de Vectores de Soporte (SVM)
 
-Este repositorio contiene el código fuente y la memoria final de mi Trabajo de Fin de Grado centrado en las Máquinas de Vectores de Soporte. El proyecto profundiza en el funcionamiento matemático de este algoritmo y evalúa su rendimiento empírico en diferentes problemas de aprendizaje automático supervisado.
+Este repositorio contiene el código fuente y la memoria final de mi Trabajo de Fin de Grado centrado en las Máquinas de Vectores de Soporte. El proyecto profundiza en el funcionamiento matemático de este algoritmo y evalúa su rendimiento en diferentes problemas de aprendizaje automático supervisado.
 
 ## Resumen del proyecto
 
@@ -14,9 +14,9 @@ Por otro lado, la fase práctica implementa estos conceptos teóricos para evalu
 
 - codigo_practico.R: Script principal que incluye la carga de datos, el preprocesamiento, el entrenamiento y la evaluación de los modelos. Los algoritmos se han probado en tres escenarios distintos: diagnóstico de tumores mamarios para clasificación binaria, identificación de siluetas de vehículos para clasificación multiclase y estimación de la edad biológica en moluscos para regresión.
 
-- generacion_imagenes.R: Código empleado para generar las gráficas de hiperplanos, márgenes y fronteras de decisión que ilustran las explicaciones de la memoria.
+- imagenes.R: Código empleado para generar las gráficas de hiperplanos, márgenes y fronteras de decisión que ilustran las explicaciones de la memoria.
 
-- memoria_TFG.pdf: Documento completo con el desarrollo teórico, la metodología aplicada y las conclusiones finales del análisis.
+- TFG_DanielSánchezBotella.pdf: Documento completo con el desarrollo teórico, la metodología aplicada y las conclusiones finales del análisis.
 
 ## Tecnologías y requisitos
 
