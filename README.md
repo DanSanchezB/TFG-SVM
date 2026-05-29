@@ -12,7 +12,7 @@ Por otro lado, la fase práctica implementa estos conceptos teóricos para evalu
 
 ## Archivos del repositorio
 
-- codigo_practico.R: Script principal que incluye la carga de datos, el preprocesamiento, el entrenamiento y la evaluación de los modelos. Los algoritmos se han probado en tres escenarios distintos: diagnóstico de tumores mamarios para clasificación binaria, identificación de siluetas de vehículos para clasificación multiclase y estimación de la edad biológica en moluscos para regresión.
+- codigo_practico.R: Script principal que incluye la carga de datos, el preprocesamiento, el entrenamiento y la evaluación de los modelos. Los algoritmos se han probado en tres escenarios distintos: diagnóstico de tumores mamarios para clasificación binaria (wdbc.data), identificación de siluetas de vehículos para clasificación multiclase (xaa.dat, ..., xai.dat) y estimación de la edad biológica en moluscos para regresión (abalone.data).
 
 - imagenes.R: Código empleado para generar las gráficas de hiperplanos, márgenes y fronteras de decisión que ilustran las explicaciones de la memoria.
 
