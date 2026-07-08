@@ -10,16 +10,52 @@ Por un lado, el marco teórico explora los fundamentos analíticos de las SVM. E
 
 Por otro lado, la fase práctica implementa estos conceptos teóricos para evaluar el comportamiento de los kernels lineal, polinómico y radial sobre conjuntos de datos reales.
 
-## Archivos del repositorio
+## Estructura del repositorio
 
-- codigo_practico.R: Script principal que incluye la carga de datos, el preprocesamiento, el entrenamiento y la evaluación de los modelos. Los algoritmos se han probado en tres escenarios distintos: diagnóstico de tumores mamarios para clasificación binaria (wdbc.data), identificación de siluetas de vehículos para clasificación multiclase (xaa.dat, ..., xai.dat) y estimación de la edad biológica en moluscos para regresión (abalone.data).
+```
+data/      Conjuntos de datos empleados en la fase práctica
+figures/   Gráficas generadas por los scripts e incluidas en la memoria
+src/       Código fuente en R
+thesis/    Memoria final del trabajo
+```
 
-- imagenes.R: Código empleado para generar las gráficas de hiperplanos, márgenes y fronteras de decisión que ilustran las explicaciones de la memoria.
+- `src/main.R`: script principal de la fase práctica. Incluye la carga de datos, el preprocesamiento, el entrenamiento y la evaluación de los modelos sobre tres escenarios distintos: diagnóstico de tumores mamarios para clasificación binaria, identificación de siluetas de vehículos para clasificación multiclase y estimación de la edad biológica en moluscos para regresión.
 
-- TFG_DanielSánchez.pdf: Documento completo con el desarrollo teórico, la metodología aplicada y las conclusiones finales del análisis.
+- `src/plots.R`: código empleado para generar las gráficas de hiperplanos, márgenes, funciones kernel y fronteras de decisión que ilustran las explicaciones teóricas de la memoria.
+
+- `thesis/TFG_DanielSánchez.pdf`: documento completo con el desarrollo teórico, la metodología aplicada y las conclusiones finales del análisis.
+
+## Datos
+
+Los tres conjuntos de datos provienen del [UCI Machine Learning Repository](https://archive.ics.uci.edu/):
+
+| Fichero | Conjunto de datos | Problema |
+|---|---|---|
+| `data/wdbc.data` | Breast Cancer Wisconsin (Diagnostic) | Clasificación binaria |
+| `data/xaa.dat` … `data/xai.dat` | Statlog (Vehicle Silhouettes) | Clasificación multiclase |
+| `data/abalone.data` | Abalone | Regresión |
+
+El conjunto de siluetas de vehículos se distribuye originalmente repartido en nueve ficheros `.dat`; `main.R` los lee y los combina en un único dataframe.
 
 ## Tecnologías y requisitos
 
-El proyecto está desarrollado íntegramente en el lenguaje de programación R. 
+El proyecto está desarrollado íntegramente en el lenguaje de programación R y depende de los siguientes paquetes:
 
-Para poder ejecutar los scripts correctamente es necesario tener instalada la librería e1071, ya que proporciona la implementación base de los modelos SVM y SVR utilizados a lo largo del trabajo.
+- `e1071`: implementación base de los modelos SVM y SVR utilizados a lo largo del trabajo.
+- `ggplot2`: generación de todas las gráficas.
+- `caret`: particiones train-test y matrices de confusión con sus métricas.
+- `pROC`: curvas ROC.
+- `extrafont`: tipografía de LaTeX en las gráficas.
+
+Ambos scripts instalan automáticamente los paquetes que falten al ejecutarse.
+
+## Ejecución
+
+Las rutas de los scripts son relativas a la raíz del proyecto, por lo que deben ejecutarse desde ella (y no desde `src/`):
+
+```bash
+Rscript src/main.R    # fase práctica: entrenamiento y evaluación de los modelos
+Rscript src/plots.R   # gráficas teóricas de la memoria
+```
+
+Desde RStudio, basta con abrir el proyecto en la carpeta raíz antes de hacer *Source*.
