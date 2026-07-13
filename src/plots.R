@@ -10,7 +10,7 @@ library(extrafont)
 
 set.seed(28) # para que siempre salga igual cada vez que compilamos
 
-colors() # para ver todos los colores con nombre específico
+# colors() # descomentar para consultar los nombres de color disponibles en R
 
 ############################################################################### -
 # HIPERPLANOS DISCRIMINANTES----
@@ -37,7 +37,7 @@ datos1 <- data.frame(
 grafica_hiperplano <- ggplot(datos1, aes(x = X1, y = X2, color = Clase)) +
   geom_point(size = 3) + # puntos más grandes y claros
   scale_color_manual(values = c("G1" = "red", "G2" = "royalblue")) + # colores manualmente
-  geom_abline(intercept = 8, slope = -1, color = "black", size = 1) + # dibujar la recta (hiperplano)
+  geom_abline(intercept = 8, slope = -1, color = "black", linewidth = 1) + # dibujar la recta (hiperplano)
   theme_bw() + # tener fondo blanco
   labs(x = expression(X[1]), y = expression(X[2])) +
   theme(
@@ -115,9 +115,9 @@ grafica_max_margen <- ggplot() +
   ) +
 
   # dibujamos las flechas de distancia al hiperplano (el margen m)
-  geom_abline(intercept = intercept, slope = pendiente, color = "black", size = 1.2) +
-  geom_abline(intercept = margen_sup, slope = pendiente, color = "grey20", linetype = "dashed", size = 0.7) +
-  geom_abline(intercept = margen_inf, slope = pendiente, color = "grey20", linetype = "dashed", size = 0.7) +
+  geom_abline(intercept = intercept, slope = pendiente, color = "black", linewidth = 1.2) +
+  geom_abline(intercept = margen_sup, slope = pendiente, color = "grey20", linetype = "dashed", linewidth = 0.7) +
+  geom_abline(intercept = margen_inf, slope = pendiente, color = "grey20", linetype = "dashed", linewidth = 0.7) +
 
   # dibujamos el hiperplano solido y los margenes tangentes punteados
   coord_fixed(xlim = c(0, 8.5), ylim = c(-1, 8), expand = FALSE) + # para que salga bien
@@ -219,7 +219,7 @@ int_sens <- -b_sens / w_sens[2]
 grafica_izq <- ggplot(datos4, aes(x = X1, y = X2, color = Clase)) +
   geom_point(size = 2.5) +
   scale_color_manual(values = c("G1" = "red", "G2" = "royalblue")) +
-  geom_abline(intercept = int_base, slope = pend_base, color = "black", size = 1.2) +
+  geom_abline(intercept = int_base, slope = pend_base, color = "black", linewidth = 1.2) +
   coord_fixed(xlim = c(0, 7), ylim = c(0, 7), expand = FALSE) +
   theme_bw() +
   labs(x = expression(X[1]), y = expression(X[2])) +
@@ -232,8 +232,8 @@ grafica_izq <- ggplot(datos4, aes(x = X1, y = X2, color = Clase)) +
 grafica_der <- ggplot(datos_atipico, aes(x = X1, y = X2, color = Clase)) +
   geom_point(size = 2.5) +
   scale_color_manual(values = c("G1" = "red", "G2" = "royalblue")) +
-  geom_abline(intercept = int_sens, slope = pend_sens, color = "black", size = 1.2) + # Nueva recta
-  geom_abline(intercept = int_base, slope = pend_base, color = "grey20", linetype = "dashed", size = 0.8) + # Recta antigua
+  geom_abline(intercept = int_sens, slope = pend_sens, color = "black", linewidth = 1.2) + # Nueva recta
+  geom_abline(intercept = int_base, slope = pend_base, color = "grey20", linetype = "dashed", linewidth = 0.8) + # Recta antigua
   coord_fixed(xlim = c(0, 7), ylim = c(0, 7), expand = FALSE) +
   theme_bw() +
   labs(x = expression(X[1]), y = expression(X[2])) +
@@ -284,9 +284,9 @@ int_e_inf <- (-b_e - 1) / w_e[2]
 grafica_ancho <- ggplot(datos5, aes(x = X1, y = X2, color = Clase)) +
   geom_point(size = 2.5) +
   scale_color_manual(values = c("G1" = "red", "G2" = "royalblue")) +
-  geom_abline(intercept = int_a, slope = pend_a, color = "black", size = 1.2) +
-  geom_abline(intercept = int_a_sup, slope = pend_a, color = "black", linetype = "dashed", size = 0.8) +
-  geom_abline(intercept = int_a_inf, slope = pend_a, color = "black", linetype = "dashed", size = 0.8) +
+  geom_abline(intercept = int_a, slope = pend_a, color = "black", linewidth = 1.2) +
+  geom_abline(intercept = int_a_sup, slope = pend_a, color = "black", linetype = "dashed", linewidth = 0.8) +
+  geom_abline(intercept = int_a_inf, slope = pend_a, color = "black", linetype = "dashed", linewidth = 0.8) +
   coord_fixed(xlim = c(0, 7), ylim = c(0, 7), expand = FALSE) +
   theme_bw() +
   labs(x = expression(X[1]), y = expression(X[2])) +
@@ -299,9 +299,9 @@ grafica_ancho <- ggplot(datos5, aes(x = X1, y = X2, color = Clase)) +
 grafica_estrecho <- ggplot(datos5, aes(x = X1, y = X2, color = Clase)) +
   geom_point(size = 2.5) +
   scale_color_manual(values = c("G1" = "red", "G2" = "royalblue")) +
-  geom_abline(intercept = int_e, slope = pend_e, color = "black", size = 1.2) +
-  geom_abline(intercept = int_e_sup, slope = pend_e, color = "black", linetype = "dashed", size = 0.8) +
-  geom_abline(intercept = int_e_inf, slope = pend_e, color = "black", linetype = "dashed", size = 0.8) +
+  geom_abline(intercept = int_e, slope = pend_e, color = "black", linewidth = 1.2) +
+  geom_abline(intercept = int_e_sup, slope = pend_e, color = "black", linetype = "dashed", linewidth = 0.8) +
+  geom_abline(intercept = int_e_inf, slope = pend_e, color = "black", linetype = "dashed", linewidth = 0.8) +
   coord_fixed(xlim = c(0, 7), ylim = c(0, 7), expand = FALSE) +
   theme_bw() +
   labs(x = expression(X[1]), y = expression(X[2])) +
@@ -365,9 +365,9 @@ int_l_inf <- (-b_l - 1) / w_l[2]
 grafica_lin <- ggplot(datos6, aes(x = X1, y = X2, color = Clase)) +
   geom_point(size = 2.5) +
   scale_color_manual(values = c("G1" = "red", "G2" = "royalblue")) +
-  geom_abline(intercept = int_l, slope = pend_l, color = "black", size = 1.2) +
-  geom_abline(intercept = int_l_sup, slope = pend_l, color = "black", linetype = "dashed", size = 0.8) +
-  geom_abline(intercept = int_l_inf, slope = pend_l, color = "black", linetype = "dashed", size = 0.8) +
+  geom_abline(intercept = int_l, slope = pend_l, color = "black", linewidth = 1.2) +
+  geom_abline(intercept = int_l_sup, slope = pend_l, color = "black", linetype = "dashed", linewidth = 0.8) +
+  geom_abline(intercept = int_l_inf, slope = pend_l, color = "black", linetype = "dashed", linewidth = 0.8) +
   coord_fixed(xlim = c(0, 7), ylim = c(0, 7), expand = FALSE) +
   theme_bw() +
   labs(x = expression(X[1]), y = expression(X[2])) +
@@ -414,13 +414,13 @@ grafica_polinomico <- ggplot() +
   # frontera de decisión (curva de nivel 0)
   geom_contour(
     data = grid, aes(x = X1, y = X2, z = z),
-    breaks = 0, color = "black", size = 1
+    breaks = 0, color = "black", linewidth = 1
   ) +
 
   # líneas de margen (niveles 1 y -1)
   geom_contour(
     data = grid, aes(x = X1, y = X2, z = z),
-    breaks = c(-1, 1), color = "black", linetype = "dashed", size = 0.5
+    breaks = c(-1, 1), color = "black", linetype = "dashed", linewidth = 0.5
   ) +
   scale_color_manual(values = c("G1" = "red", "G2" = "royalblue")) +
   coord_fixed(xlim = c(0, 7), ylim = c(0, 7), expand = FALSE) +
@@ -470,13 +470,13 @@ grafica_gaussiano <- ggplot() +
   # frontera de decisión (curva de nivel 0)
   geom_contour(
     data = grid, aes(x = X1, y = X2, z = z),
-    breaks = 0, color = "black", size = 1
+    breaks = 0, color = "black", linewidth = 1
   ) +
 
   # líneas de margen (niveles 1 y -1)
   geom_contour(
     data = grid, aes(x = X1, y = X2, z = z),
-    breaks = c(-1, 1), color = "black", linetype = "dashed", size = 0.5
+    breaks = c(-1, 1), color = "black", linetype = "dashed", linewidth = 0.5
   ) +
   scale_color_manual(values = c("G1" = "red", "G2" = "royalblue")) +
   coord_fixed(xlim = c(0, 7), ylim = c(0, 7), expand = FALSE) +
@@ -571,11 +571,11 @@ grafica_svr <- ggplot(datos7, aes(x = X, y = Y)) +
   geom_point(color = "gray30", size = 2) +
 
   # límites del tubo
-  geom_abline(intercept = int_sup, slope = pendiente, color = "royalblue", linetype = "dashed", size = 0.8) +
-  geom_abline(intercept = int_inf, slope = pendiente, color = "royalblue", linetype = "dashed", size = 0.8) +
+  geom_abline(intercept = int_sup, slope = pendiente, color = "royalblue", linetype = "dashed", linewidth = 0.8) +
+  geom_abline(intercept = int_inf, slope = pendiente, color = "royalblue", linetype = "dashed", linewidth = 0.8) +
 
   # recta de regresión
-  geom_abline(intercept = int_principal, slope = pendiente, color = "royalblue", size = 1.2) +
+  geom_abline(intercept = int_principal, slope = pendiente, color = "royalblue", linewidth = 1.2) +
 
   # pintar vectores de soporte
   geom_point(

@@ -34,8 +34,8 @@ evaluar_modelo <- function(modelo_svm,
 
   curva <- roc(
     response = variable_real, predictor = valores_decision,
-    levels = c("B", "M"), q = TRUE
-  ) # q=T quita los avisos
+    levels = c("B", "M"), quiet = TRUE
+  ) # quiet quita los avisos
   valor_auc <- as.numeric(auc(curva))
 
   tabla <- data.frame(
@@ -271,10 +271,6 @@ cat(
   "% de los pacientes del entrenamiento como vectores de soporte.\n"
 )
 
-set.seed(28)
-
-
-
 
 ## breast radial----
 set.seed(28)
@@ -486,7 +482,7 @@ pct_sv_vehicles_lin <- (vehicles_lineal$tot.nSV / nrow(vehicles_train)) * 100
 cat(
   "El SVM Lineal usa el",
   round(pct_sv_vehicles_lin, 2),
-  "% de los pacientes del entrenamiento como vectores de soporte.\n"
+  "% de los individuos del entrenamiento como vectores de soporte.\n"
 )
 
 
@@ -912,9 +908,3 @@ ggsave("figures/abalone_radial.png",
 evaluar_modelo_regresion(abalone_lineal, abalone_test, abalone_test$Rings)
 evaluar_modelo_regresion(abalone_polinomico, abalone_test, abalone_test$Rings)
 evaluar_modelo_regresion(abalone_radial, abalone_test, abalone_test$Rings)
-
-
-resultados_ar <- param_abalone_radial$performances
-top_5_ar <- head(resultados_ar[order(resultados_ar$error), ], 5)
-cat("\n--- TOP 5 MODELOS (KERNEL RADIAL) ---\n")
-print(top_5_ar, row.names = TRUE)
