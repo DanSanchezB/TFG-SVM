@@ -23,7 +23,7 @@ thesis/    Memoria final del trabajo
 
 - `src/plots.R`: código empleado para generar las gráficas de hiperplanos, márgenes, funciones kernel y fronteras de decisión que ilustran las explicaciones teóricas de la memoria.
 
-- `thesis/TFG_DanielSánchez.pdf`: documento completo con el desarrollo teórico, la metodología aplicada y las conclusiones finales del análisis.
+- `thesis/TFG_DanielSanchez.pdf`: documento completo con el desarrollo teórico, la metodología aplicada y las conclusiones finales del análisis.
 
 ## Datos
 
