@@ -1,0 +1,7 @@
+# Normaliza los finales de línea a LF dentro del repositorio,
+# evitando diffs espurios al trabajar desde Windows.
+* text=auto eol=lf
+
+# Binarios reales: Git no debe tocarlos ni intentar diferenciarlos como texto.
+*.png binary
+*.pdf binary
