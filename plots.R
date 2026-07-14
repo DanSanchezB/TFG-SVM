@@ -1,6 +1,9 @@
 
-install.packages(c("ggplot2", "e1071"))
-install.packages("extrafont") #para poner la fuente de LaTeX en las gráficas
+# extrafont: para poner la fuente de LaTeX en las gráficas
+paquetes <- c("ggplot2", "e1071", "extrafont")
+for (p in paquetes) {
+  if (!requireNamespace(p, quietly = TRUE)) install.packages(p)
+}
 
 library(ggplot2)
 library(e1071)
