@@ -23,7 +23,7 @@ thesis/    Memoria final del trabajo
 
 -  `src/plots.R`: código empleado para generar las gráficas de hiperplanos, márgenes, funciones kernel y fronteras de decisión que ilustran las explicaciones teóricas de la memoria.
 
-- `thesis/TFG_DanielSánchez.pdf`: documento completo con el desarrollo teórico, la metodología aplicada y las conclusiones finales del análisis.
+- `thesis/TFG_DanielSanchez.pdf`: documento completo con el desarrollo teórico, la metodología aplicada y las conclusiones finales del análisis.
 
 ## Datos
 
@@ -39,6 +39,23 @@ El conjunto de siluetas de vehículos se distribuye originalmente repartido en n
 
 ## Tecnologías y requisitos
 
-El proyecto está desarrollado íntegramente en el lenguaje de programación R. 
+El proyecto está desarrollado íntegramente en el lenguaje de programación R y depende de los siguientes paquetes:
 
-Para poder ejecutar los scripts correctamente es necesario tener instalada la librería e1071, ya que proporciona la implementación base de los modelos SVM y SVR utilizados a lo largo del trabajo.
+- `e1071`: implementación base de los modelos SVM y SVR utilizados a lo largo del trabajo.
+- `ggplot2`: generación de todas las gráficas.
+- `caret`: particiones train-test y matrices de confusión con sus métricas.
+- `pROC`: curvas ROC.
+- `extrafont`: tipografía de LaTeX en las gráficas.
+
+Ambos scripts instalan automáticamente los paquetes que falten al ejecutarse.
+
+## Ejecución
+
+Las rutas de los scripts son relativas a la raíz del proyecto, por lo que deben ejecutarse desde ella (y no desde `src/`):
+
+```bash
+Rscript src/main.R    # fase práctica: entrenamiento y evaluación de los modelos
+Rscript src/plots.R   # gráficas teóricas de la memoria
+```
+
+Desde RStudio, basta con abrir el proyecto en la carpeta raíz antes de hacer *Source*.
