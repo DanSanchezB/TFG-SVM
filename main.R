@@ -1,9 +1,11 @@
 
-install.packages(c("ggplot2", "e1071"))
-install.packages("extrafont") #para poner la fuente de LaTeX en las gráficas
-install.packages("caret") #para el train-test y las matrices de confusión con sus métricas
-install.packages("pROC") #para las curvas ROC
-
+# extrafont: para poner la fuente de LaTeX en las gráficas
+# caret: para el train-test y las matrices de confusión con sus métricas
+# pROC: para las curvas ROC
+paquetes <- c("ggplot2", "e1071", "extrafont", "caret", "pROC")
+for (p in paquetes) {
+  if (!requireNamespace(p, quietly = TRUE)) install.packages(p)
+}
 library(ggplot2)
 library(e1071)
 library(extrafont)
